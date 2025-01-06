@@ -8,12 +8,12 @@ This repository contains the core implementation of the <em>Speaker-aware CTC (S
 
 ## SACTC - a Quick Preview
 
-Speaker-aware CTC (SACTC) is a variant of CTC training objective, aims to control the CTC alighment with considering text toens' speaker identity information.
+Speaker-aware CTC (SACTC) is a variant of CTC training objective, aims to control the CTC alighment with considering text tokens' speaker identity information.
 It is built upon the [Bayesian Risk CTC](https://openreview.net/forum?id=Bd7GueaTxUz) framework but specially designed for multi-talker overlapped speech recognition.
 
 
 As illustrated in the below figure, tokens <span style="color:royalblue">1</span> and <span style="color:lightcoral">2,3,4</span> are from different speakers, while <span style="color:lightgreen">green area</span> indicates encouraged alignment paths. 
-<em>SACTC requires the front-end encoder to disentangle separate speakers onto specific timeframes</em> ({$u_1$} is at $t_1-t_2$; {$u_2$,$u_3$,$u_4$} are at $t_3-t_8$).
+<em>SACTC requires the front-end encoder to disentangle separate speakers onto specific timeframes</em> ({ $u_1$} is at $t_1-t_2$; { $u_2$, $u_3$, $u_4$} are at $t_3-t_8$).
 <div align=center>
   <img src="assets/lattice.png" width=80%>
 </div>
