@@ -44,7 +44,8 @@ To use this code, please:
 - Unified modeling of **multi-talker** speech recognition and **diarization** [![arXiv](https://img.shields.io/badge/arXiv-2305.16263-b31b1b.svg?style=flat)](https://arxiv.org/abs/2305.16263)
 - Empowering **Whisper** for multi-talker and target-talker speech recognition [![arXiv](https://img.shields.io/badge/arXiv-2407.09817-b31b1b.svg?style=flat)](https://arxiv.org/abs/2407.09817)
  [![Static Badge](https://img.shields.io/badge/Github-Whisper--Sidecar-blue)](https://github.com/LingweiMeng/Whisper-Sidecar)
-- **Large language model** for multi-talker speech recognition [![arXiv](https://img.shields.io/badge/arXiv-2409.08596-b31b1b.svg?style=flat)](https://arxiv.org/abs/2409.08596)
+- **Insturction-based** multi-talker speech recognition with **large language model**
+ [![arXiv](https://img.shields.io/badge/arXiv-2409.08596-b31b1b.svg?style=flat)](https://arxiv.org/abs/2409.08596) [![Static Badge](https://img.shields.io/badge/Github-MT--LLM-blue)](https://github.com/cuhealthybrains/MT-LLM)
 
 
 ## Citation
