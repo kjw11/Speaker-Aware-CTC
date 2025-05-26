@@ -2,7 +2,11 @@
 ><em> In International Conference on Acoustics, Speech, and Signal Processing (ICASSP), 2025 
 <br> Authors: Jiawen Kang, Lingwei Meng, Mingyu Cui, Yuejiao Wang, Xixin Wu, Xunying Liu, Helen Meng</em>
 
-[Paper PDF](sactc.pdf) | [Arxiv](https://arxiv.org/abs/2409.12388) | [Paper HTML](https://arxiv.org/html/2409.12388v2) | [Citation](#citation)
+**[Poster](assets/poster.pdf)**  | 
+[Paper PDF](assets/sactc.pdf) | 
+[Arxiv](https://arxiv.org/abs/2409.12388) | 
+[Paper HTML](https://arxiv.org/html/2409.12388v2) | 
+[Citation](#citation)
 
 This repository contains the core implementation of the <em>Speaker-aware CTC (SACTC) </em> algorithm for multi-talker overlapped speech recognition.
 
