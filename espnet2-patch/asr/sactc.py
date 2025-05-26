@@ -388,27 +388,6 @@ class SpeakerAwareCTC(BPECTC):
             (time_range / hlens_expanded - proportion_expanded) * -self.risk_factor
         ))
 
-        #
-        # u_risk_a = torch.arange(
-        #     1, T+1, device=loss_state.device
-        # ).unsqueeze(0).unsqueeze(0).repeat(B, 1, 1)
-        # u_risk_a = - torch.log(self.sigmoid(
-        #     (
-        #         -u_risk_a / hlens.unsqueeze(1).unsqueeze(1) 
-        #         + proportion.unsqueeze(1).unsqueeze(1)
-        #     ) * -self.risk_factor
-        # ))
-
-        # u_risk_b = torch.arange(
-        #     1, T+1, device=loss_state.device
-        # ).unsqueeze(0).unsqueeze(0).repeat(B, 1, 1)
-        # u_risk_b = - torch.log(self.sigmoid(
-        #     (
-        #         u_risk_b / hlens.unsqueeze(1).unsqueeze(1) 
-        #         - proportion.unsqueeze(1).unsqueeze(1)
-        #     ) * -self.risk_factor
-        # ))
-
         # Build final risk tensor
         risk = torch.zeros([B, U, T], device=loss_state.device)
         for batch_idx, y_idx in enumerate(target_y_idxs):
@@ -446,8 +425,6 @@ class SpeakerAwareCTC(BPECTC):
                 - FSA indices
         """
 
-    # def find_backward_index(self, ragged_lat, a_fsas, b_fsas, arc_map_a, arc_map_b, frame_idx):
-
         # Get the shape of graphs and lattice
         ragint_lat = k2.Fsa(ragged_lat).arcs.shape()
         ragint_graph = a_fsas.arcs.shape()
@@ -482,11 +459,6 @@ class SpeakerAwareCTC(BPECTC):
         scores_dim1 = b_fsas.dense_fsa_vec.scores_dim1()
         t_idx = arc_map_b[ragint_lat.row_splits(2)[state_ids].long()] // scores_dim1
         t_idx = (t_idx - b_fsas.dense_fsa_vec.shape().row_splits(1)[:-1][fsa_idx]).long() - 1
-        # ori:
-        # t_idx = arc_map_b[
-        #     (ragint_lat.row_splits(2)[state_ids]).long()
-        # ] // b_fsas.dense_fsa_vec.scores_dim1()
-        # t_idx = (t_idx - b_fsas.dense_fsa_vec.shape().row_splits(1)[:-1][fsa_idx]).long() - 1
 
         # Calculate token indices
         lat_arc_ids = ragint_lat.row_splits(2)[state_ids].long()
